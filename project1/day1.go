@@ -17,7 +17,22 @@ func string_reverse() {
 	}
 	fmt.Println("Reversed string:", rev)
 }
+func cards() {
+  deckSize := 52 //initializing a variable (if want to write this outside write var deckSize int = 52)
+  fmt.Println(deckSize)
+}
+func cardslice(){
+	  deck := []string{"Ace of Spades", "Two of Hearts", "Three of Diamonds"}
+	  deck= append(deck, "Four of Clubs")
+	  fmt.Println(deck)
+}
+func newcard() string {
+  return "Ace of Spades"
+}
 func main(){
     add()
     string_reverse()
+    cards()
+    cardslice()
+	fmt.Println(newcard())
 }
