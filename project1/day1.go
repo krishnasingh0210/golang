@@ -35,4 +35,9 @@ func main(){
     cards()
     cardslice()
 	fmt.Println(newcard())
+
+
+	cardds := deck{"Ace of Hearts", "Two of Diamonds", "Three of Clubs"}//creating a new type of deck and initializing it with some values
+	cardds.print()
 }
+
