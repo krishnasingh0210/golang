@@ -1,8 +1,27 @@
 package main 
 import "fmt"
 type deck []string
-func (d deck) print(){//This is a method that takes a deck as a receiver and prints each card in the deck along with its index. The method uses a for loop to iterate over the deck, where i is the index and card is the value at that index. It then prints the index and the card using fmt.Println.
+
+func newDeck() deck {
+cards:=deck{}
+cardSuits := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
+cardValues := []string{"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"}
+for _, suit := range cardSuits { //using '_' means that we are ignoring the index of the loop and only using the value of the loop.
+		for _, value := range cardValues {
+			cards = append(cards, value+" of "+suit)
+		}
+	}
+	return cards
+}
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+func (d deck) print(){//This is a method that takes a deck as a receiver and prints each card in the deck along with its index.
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
+}
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+func deal(d deck, handsize int ) (deck,deck){
+	return d[:handsize], d[handsize:]
 }
