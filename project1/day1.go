@@ -8,7 +8,7 @@ func add() {
 	fmt.Scan(&a, &b)
 	fmt.Println("The numbers are:", a+b)
 }
-//-----------------------------------------------------------------------------------------------------------------------------------------
+//STRING REVERSE FUNCTION
 
 func string_reverse() {
 	var txt, rev string
@@ -19,31 +19,30 @@ func string_reverse() {
 	}
 	fmt.Println("Reversed string:", rev)
 }
-//-----------------------------------------------------------------------------------------------------------------------------------------
+//CARDS FUNCTION
 
 func cards() {
   deckSize := 52 //initializing a variable (if want to write this outside write var deckSize int = 52)
   fmt.Println(deckSize)
 }
-//-----------------------------------------------------------------------------------------------------------------------------------------
+//CARD SLICE FUNCTION
 
 func cardslice(){
 	  deck := []string{"Ace of Spades", "Two of Hearts", "Three of Diamonds"}
 	  deck= append(deck, "Four of Clubs")
 	  fmt.Println(deck)
 }
-//-----------------------------------------------------------------------------------------------------------------------------------------
+//NEW CARD FUNCTION
 
 func newcard() string {
   return "Ace of Spades"
 }
-//-----------------------------------------------------------------------------------------------------------------------------------------
+//COLOR FUNCTION
 
 func colors() (string, string, string) {
 return "red", "yellow", "blue"
 }
-//-----------------------------------------------------------------------------------------------------------------------------------------
-
+//MAIN FUNCTION
 func main(){
     add()
     string_reverse()

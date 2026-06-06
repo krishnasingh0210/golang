@@ -13,15 +13,13 @@ for _, suit := range cardSuits { //using '_' means that we are ignoring the inde
 	}
 	return cards
 }
-//-----------------------------------------------------------------------------------------------------------------------------------------
-
+//RECEIVER FUNCTION
 func (d deck) print(){//This is a method that takes a deck as a receiver and prints each card in the deck along with its index.
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
 }
-//-----------------------------------------------------------------------------------------------------------------------------------------
-
+//DEAL FUNCTION
 func deal(d deck, handsize int ) (deck,deck){
 	return d[:handsize], d[handsize:]
 }
