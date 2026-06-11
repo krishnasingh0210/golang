@@ -44,23 +44,39 @@ return "red", "yellow", "blue"
 }
 //MAIN FUNCTION
 func main(){
-    add()
-    string_reverse()
-    cards()
-    cardslice()
+   /*1. add()
+    2. string_reverse()
+    3. cards()
+    4. cardslice()
 	fmt.Println(newcard())
+	
+    5. color1, color2, color3 := colors()
+    fmt.Println(color1, color2, color3)
 
-    cardds := newDeck()
-	cardds.print()
-	/*cardds := deck{"Ace of Hearts", "Two of Diamonds", "Three of Clubs"}//creating a new type of deck and initializing it with some values
+	6. greeting := "Hello World"
+	fmt.Println([]byte(greeting))//slice of bytes that represents the string "Hello World"*/
+	
+    /*10. cardds := newDeck()
+	fmt.Println(cardds.toString())//converting the deck to a string and printing it*/
+	
+	
+	//7. cardds.saveToFile("my_cards.txt")   //saving the deck to a file named "my_cards.txt"
+	
+	/*8. cardds := newDeckFromFile("my_cards.txt")//creating a new deck from the file "my_cards.txt" but this will not work because 
+	the file is not present in the current directory so we need to create the file first and then run this code for now this will our given error.
+	cardds.print()//printing the new deck created from the file */
+	
+	/*9.cardds := deck{"Ace of Hearts", "Two of Diamonds", "Three of Clubs"}//creating a new type of deck and initializing it with some values
 	cardds.print()*/
+	
+	 cardds := newDeck()
+	 cardds.shuffle()
+	cardds.print()
 
 	hand, remainingdeck := deal(cardds,5)/*this means that cards from cardds till (5-1) and the value of type deck will be assigned to hand 
 	and the remaining cards from cardds will be assigned to remainingdeck.*/
 	hand.print()
 	remainingdeck.print()
-
-    color1, color2, color3 := colors()
-    fmt.Println(color1, color2, color3)
+	
 }
 
