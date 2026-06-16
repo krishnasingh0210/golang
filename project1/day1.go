@@ -42,6 +42,62 @@ func newcard() string {
 func colors() (string, string, string) {
 return "red", "yellow", "blue"
 }
+//EVEN ODD FUNCTION
+func even_odd(){
+    var a int
+fmt.Println("Enter the number:")
+fmt.Scanln(&a)
+if a%2==0 {
+    fmt.Println("The entered number is even")
+}else{//IT IS NECCESARY TO HAVE ELSE WRITE LIKE (  } else {  ) in the same line otherwise it will give error.
+    fmt.Println("The entered number is odd")
+} 
+}
+//PRIME NUMBER FUNCTION
+func prime_number(){
+	 var a,count int
+fmt.Println("Enter the number:")
+fmt.Scanln(&a)
+for i :=1;i<=a;i++{
+    if a%i==0{
+        count++
+    }
+}
+    if count==2{
+        fmt.Println("The entered number is Prime.")
+    }else{
+        fmt.Println("The entered number is Not Prime.")
+    }
+}
+//VOWELS FUNCTION
+func vowels(){
+	var a string
+      var vowels_count int
+      fmt.Println("Enter the string:")
+      fmt.Scan(&a)
+      for _,char :=range a{
+          switch char{
+              case 'a','e','i','o','u','A','E','I','O','U':
+              vowels_count++
+             fmt.Printf("Found vowels: %c\n", char) //fmt.Println("Found vowels:",char) //{This will result in rune(int32) value bcz char is rune type}
+          }
+      }
+      fmt.Println("The vovels in the string are:",vowels_count)
+}
+//FACTORIAL FUNCTION
+func factorial() {
+    var a,fact int
+    fact=1
+  fmt.Println("Enter the number:")
+  fmt.Scan(&a)
+  for i:=1;i<=a;i++{
+      fmt.Print(i)
+      fact*=i
+  }
+  fmt.Println()
+  fmt.Println("The factorial of the entered number is:",fact)
+}
+
 //MAIN FUNCTION
 func main(){
    /*1. add()
@@ -49,6 +105,10 @@ func main(){
     3. cards()
     4. cardslice()
 	fmt.Println(newcard())
+	11. even_odd()
+	12. prime_number()
+	13. vowels()
+	14. factorial()
 	
     5. color1, color2, color3 := colors()
     fmt.Println(color1, color2, color3)
@@ -77,6 +137,7 @@ func main(){
 	and the remaining cards from cardds will be assigned to remainingdeck.*/
 	hand.print()
 	remainingdeck.print()
+
 	
 }
 

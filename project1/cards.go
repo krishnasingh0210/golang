@@ -5,6 +5,7 @@ import (
 	"io/ioutil"//importing the ioutil package to use the WriteFile function
 	"os"//importing the os package to use the Exit function
 	"math/rand"//importing the math/rand package to use the Intn function
+	"time"//importing the time package to use the Now function for seeding the random number generator
 )
 type deck []string
 
@@ -46,9 +47,13 @@ func newDeckFromFile(filename string) deck {
 	s := strings.Split(string(bs), ", ")//converting the byteslice to a string
 	return deck(s)
 }
+//int64 == Now().UnixNano() represents no. of nanoseconds at present used for seed generating different number each time.
 func (d deck) shuffle(){
+	source := rand.NewSource(time.Now().UnixNano())//Creates a random source or seed for the truely random number generator.
+	r := rand.New(source)//Creates a new random number generator that uses the provided source to generate random numbers.
 	for i :=range d{
-		newPosition := rand.Intn(len(d)-1)
+		/*newPosition := rand.Intn(len(d)-1)//This will generate only a okay version of random number.*/
+		newPosition := r.Intn(len(d)-1)//This will generate a truely random number.
 		d[i],d[newPosition] = d[newPosition],d[i]
 	}
 }
